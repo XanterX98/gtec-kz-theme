@@ -1,0 +1,65 @@
+services:
+  db:
+    image: mysql:8.0
+    container_name: gtec_db
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+    volumes:
+      - db_data:/var/lib/mysql
+    networks:
+      - gtec_network
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p${DB_ROOT_PASSWORD}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  wordpress:
+    image: wordpress:6.5-php8.2-apache
+    container_name: gtec_wordpress
+    restart: unless-stopped
+    depends_on:
+      db:
+        condition: service_healthy
+    ports:
+      - "${WP_PORT:-8080}:80"
+    environment:
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_NAME: ${DB_NAME}
+      WORDPRESS_DB_USER: ${DB_USER}
+      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD}
+      WORDPRESS_TABLE_PREFIX: ${WP_TABLE_PREFIX:-wp_}
+      WORDPRESS_DEBUG: ${WP_DEBUG:-false}
+    volumes:
+      - wp_data:/var/www/html
+      - ./wp-content:/var/www/html/wp-content
+    networks:
+      - gtec_network
+
+  phpmyadmin:
+    image: phpmyadmin:latest
+    container_name: gtec_phpmyadmin
+    restart: unless-stopped
+    depends_on:
+      - db
+    ports:
+      - "${PMA_PORT:-8081}:80"
+    environment:
+      PMA_HOST: db
+      PMA_PORT: 3306
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD}
+      PMA_ARBITRARY: 1
+    networks:
+      - gtec_network
+
+volumes:
+  db_data:
+  wp_data:   # WordPress core (index.php, wp-admin, wp-includes — не трекаем)
+
+networks:
+  gtec_network:
+    driver: bridge

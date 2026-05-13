@@ -1,0 +1,3 @@
+[submodule "wp-content/themes/gtec-kz-theme"]
+	path = wp-content/themes/gtec-kz-theme
+	url = https://github.com/XanterX98/gtec-kz-theme

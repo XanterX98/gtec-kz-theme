@@ -1,0 +1,13 @@
+# Загрузки пользователей — не версионируем
+wp-content/uploads/
+
+# Кэш
+wp-content/cache/
+wp-content/upgrade/
+
+# Секреты
+.env
+
+# Системное
+.DS_Store
+Thumbs.db
