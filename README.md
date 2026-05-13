@@ -23,9 +23,8 @@ make logs        # логи в реальном времени (Ctrl+C для в
 ### Разработка
 
 ```bash
-make shell         # bash внутри WordPress контейнера
-make theme-update  # обновить тему с GitHub (git pull)
-make wp-cli        # установить WP-CLI внутри контейнера
+make shell     # bash внутри WordPress контейнера
+make wp-cli    # установить WP-CLI внутри контейнера (один раз)
 ```
 
 ### Docker напрямую
