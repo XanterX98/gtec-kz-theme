@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 240" fill="none">
+  <!-- Background -->
+  <rect width="400" height="240" fill="#f0fdf4"/>
+  <!-- Decorative blobs -->
+  <circle cx="360" cy="30"  r="64" fill="#16a34a" opacity=".07"/>
+  <circle cx="20"  cy="220" r="56" fill="#15803d" opacity=".06"/>
+
+  <!-- Wheat stalk left -->
+  <g opacity=".22">
+    <line x1="28" y1="200" x2="28" y2="100" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="28" cy="100" rx="5" ry="10" fill="#15803d" transform="rotate(-15 28 100)"/>
+    <ellipse cx="28" cy="116" rx="4" ry="8"  fill="#15803d" transform="rotate(15 28 116)"/>
+    <ellipse cx="28" cy="130" rx="4" ry="8"  fill="#15803d" transform="rotate(-10 28 130)"/>
+    <ellipse cx="28" cy="144" rx="4" ry="7"  fill="#15803d" transform="rotate(12 28 144)"/>
+  </g>
+  <!-- Wheat stalk right -->
+  <g opacity=".18">
+    <line x1="372" y1="200" x2="372" y2="108" stroke="#15803d" stroke-width="2" stroke-linecap="round"/>
+    <ellipse cx="372" cy="108" rx="5" ry="10" fill="#15803d" transform="rotate(10 372 108)"/>
+    <ellipse cx="372" cy="124" rx="4" ry="8"  fill="#15803d" transform="rotate(-14 372 124)"/>
+    <ellipse cx="372" cy="138" rx="4" ry="8"  fill="#15803d" transform="rotate(10 372 138)"/>
+    <ellipse cx="372" cy="152" rx="4" ry="7"  fill="#15803d" transform="rotate(-8 372 152)"/>
+  </g>
+
+  <!-- Browser window shadow -->
+  <rect x="52" y="30" width="298" height="186" rx="12" fill="#16a34a" opacity=".10"/>
+  <!-- Browser window -->
+  <rect x="48" y="24" width="298" height="186" rx="12" fill="#fff" stroke="#bbf7d0" stroke-width="1.5"/>
+
+  <!-- Browser title bar -->
+  <rect x="48" y="24" width="298" height="32" rx="12" fill="#16a34a"/>
+  <rect x="48" y="44" width="298" height="12" fill="#16a34a"/>
+  <!-- Window dots -->
+  <circle cx="68"  cy="40" r="5" fill="#fff" opacity=".35"/>
+  <circle cx="84"  cy="40" r="5" fill="#fff" opacity=".35"/>
+  <circle cx="100" cy="40" r="5" fill="#fff" opacity=".35"/>
+  <!-- URL bar -->
+  <rect x="118" y="30" width="140" height="20" rx="10" fill="#fff" opacity=".2"/>
+  <rect x="126" y="36" width="74" height="8"  rx="4"  fill="#fff" opacity=".55"/>
+
+  <!-- Site header inside browser -->
+  <rect x="48" y="56" width="298" height="38" fill="#15803d"/>
+  <!-- Logo text placeholder -->
+  <rect x="62"  y="66" width="60" height="10" rx="5" fill="#fff" opacity=".6"/>
+  <!-- Nav links -->
+  <rect x="140" y="67" width="28" height="7" rx="3" fill="#fff" opacity=".35"/>
+  <rect x="174" y="67" width="36" height="7" rx="3" fill="#fff" opacity=".35"/>
+  <rect x="216" y="67" width="24" height="7" rx="3" fill="#fff" opacity=".35"/>
+  <rect x="246" y="67" width="28" height="7" rx="3" fill="#fff" opacity=".35"/>
+  <!-- CTA button -->
+  <rect x="298" y="63" width="38" height="18" rx="9" fill="#22c55e" opacity=".9"/>
+
+  <!-- Hero section -->
+  <rect x="48" y="94" width="298" height="58" fill="#f0fdf4"/>
+  <!-- Hero text lines -->
+  <rect x="64" y="106" width="140" height="12" rx="6" fill="#15803d" opacity=".55"/>
+  <rect x="64" y="123" width="110" height="8"  rx="4" fill="#15803d" opacity=".30"/>
+  <rect x="64" y="135" width="88"  height="8"  rx="4" fill="#15803d" opacity=".25"/>
+  <!-- Hero image placeholder -->
+  <rect x="230" y="98" width="106" height="50" rx="6" fill="#bbf7d0"/>
+  <!-- Wheat icon in hero image -->
+  <line x1="283" y1="138" x2="283" y2="108" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round" opacity=".6"/>
+  <ellipse cx="283" cy="108" rx="6" ry="11" fill="#16a34a" opacity=".5" transform="rotate(-10 283 108)"/>
+  <ellipse cx="277" cy="116" rx="4" ry="8"  fill="#22c55e" opacity=".5" transform="rotate(15 277 116)"/>
+  <ellipse cx="289" cy="116" rx="4" ry="8"  fill="#22c55e" opacity=".5" transform="rotate(-15 289 116)"/>
+
+  <!-- Catalog cards row -->
+  <rect x="56"  y="160" width="62" height="40" rx="6" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="128" y="160" width="62" height="40" rx="6" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="200" y="160" width="62" height="40" rx="6" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <rect x="272" y="160" width="62" height="40" rx="6" fill="#dcfce7" stroke="#bbf7d0" stroke-width="1"/>
+  <!-- Card icons -->
+  <circle cx="87"  cy="175" r="8" fill="#16a34a" opacity=".4"/>
+  <circle cx="159" cy="175" r="8" fill="#16a34a" opacity=".4"/>
+  <circle cx="231" cy="175" r="8" fill="#16a34a" opacity=".4"/>
+  <circle cx="303" cy="175" r="8" fill="#16a34a" opacity=".4"/>
+  <!-- Card text lines -->
+  <rect x="64"  y="187" width="46" height="5" rx="2" fill="#15803d" opacity=".35"/>
+  <rect x="136" y="187" width="46" height="5" rx="2" fill="#15803d" opacity=".35"/>
+  <rect x="208" y="187" width="46" height="5" rx="2" fill="#15803d" opacity=".35"/>
+  <rect x="280" y="187" width="46" height="5" rx="2" fill="#15803d" opacity=".35"/>
+
+  <!-- Year badge floating -->
+  <rect x="280" y="108" width="58" height="26" rx="13" fill="#16a34a" opacity=".9" filter="url(#gsh)"/>
+  <rect x="290" y="117" width="38" height="8" rx="4" fill="#fff" opacity=".75"/>
+
+  <!-- "Since 1914" small text -->
+  <rect x="64" y="147" width="50" height="8" rx="4" fill="#16a34a" opacity=".55"/>
+
+  <defs>
+    <filter id="gsh" x="-20%" y="-30%" width="140%" height="160%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#15803d" flood-opacity=".25"/>
+    </filter>
+  </defs>
+</svg>
