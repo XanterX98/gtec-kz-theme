@@ -42,10 +42,34 @@ docker compose restart wordpress
 docker exec -it gtec_db mysql -u gtec_user -pgtec_pass_2024 gtec_wp
 ```
 
+## Деплой
+
+Деплой происходит автоматически при пуше в ветку `main` через GitHub Actions.
+
+### Первоначальная настройка
+
+Добавить секреты в репозитории: **Settings → Secrets and variables → Actions → New repository secret**
+
+| Secret | Описание |
+|--------|----------|
+| `SERVER_HOST` | IP или домен сервера |
+| `SERVER_USER` | Пользователь SSH (например `ubuntu`) |
+| `SERVER_SSH_KEY` | Приватный SSH-ключ (содержимое `~/.ssh/id_rsa`) |
+| `SERVER_PORT` | SSH-порт (обычно `22`) |
+
+На сервере нужно единоразово:
+```bash
+git clone https://github.com/XanterX98/gtec-kz-theme /var/www/gtec.kz
+cd /var/www/gtec.kz
+cp .env.example .env  # заполнить пароли
+make up
+```
+
+После этого каждый `git push origin main` → автодеплой.
+
 ## Тема
 
-Тема **WebStudio** клонирована из [XanterX98/gtec-kz-theme](https://github.com/XanterX98/gtec-kz-theme)
-и смонтирована в контейнер как volume — изменения в `./themes/gtec-kz-theme/` применяются сразу без перезапуска.
+Тема **WebStudio** находится в `wp-content/themes/gtec-kz-theme/` и версионируется вместе с проектом. Изменения применяются сразу — директория смонтирована в контейнер через bind mount.
 
 Активировать: `Внешний вид → Темы → WebStudio → Активировать`
 
