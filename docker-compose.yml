@@ -27,15 +27,9 @@ services:
       MYSQL_DATABASE: ${DB_NAME}
       MYSQL_USER: ${DB_USER}
       MYSQL_PASSWORD: ${DB_PASSWORD}
-    command: >
-      bash -c "mysql -h db -uroot -p$${MYSQL_ROOT_PASSWORD} -e \"
-        CREATE DATABASE IF NOT EXISTS \`$${MYSQL_DATABASE}\`
-          CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-        CREATE USER IF NOT EXISTS '$${MYSQL_USER}'@'%'
-          IDENTIFIED BY '$${MYSQL_PASSWORD}';
-        GRANT ALL PRIVILEGES ON \`$${MYSQL_DATABASE}\`.* TO '$${MYSQL_USER}'@'%';
-        FLUSH PRIVILEGES;
-      \""
+    volumes:
+      - ./mysql/db-init.sh:/db-init.sh
+    command: bash /db-init.sh
     networks:
       - gtec_network
 
