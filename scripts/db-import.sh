@@ -1,7 +1,8 @@
 #!/bin/bash
 set -e
 
-source "$(dirname "$0")/../.env"
+cd "$(dirname "$0")/.."
+source .env
 
 FILE="$1"
 
@@ -15,5 +16,5 @@ if [[ ! -f "$FILE" ]]; then
   exit 1
 fi
 
-docker exec -i gtec_db mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$FILE"
+docker compose exec -T db mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$FILE"
 echo "✓ Импортирован: $FILE"
