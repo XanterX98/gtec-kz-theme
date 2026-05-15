@@ -16,5 +16,5 @@ if [[ ! -f "$FILE" ]]; then
   exit 1
 fi
 
-docker compose exec -T db mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$FILE"
+docker compose exec -T db mysql -h 127.0.0.1 -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$FILE"
 echo "✓ Импортирован: $FILE"

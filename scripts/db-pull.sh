@@ -9,11 +9,11 @@ DUMP_FILE="/tmp/gtec_prod_$(date +%Y%m%d_%H%M%S).sql"
 
 echo "[1/4] Экспорт БД с прода ($PROD_HOST)..."
 ssh -p "$PROD_PORT" "$PROD_USER@$PROD_HOST" \
-  "cd $PROD_PATH && docker compose exec -T db mysqldump -u$DB_USER -p$DB_PASSWORD $DB_NAME" \
+  "cd $PROD_PATH && docker compose exec -T db mysqldump -h 127.0.0.1 -u$DB_USER -p$DB_PASSWORD --no-tablespaces $DB_NAME" \
   > "$DUMP_FILE"
 
 echo "[2/4] Импорт в локальную БД..."
-docker compose exec -T db mysql -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$DUMP_FILE"
+docker compose exec -T db mysql -h 127.0.0.1 -u"$DB_USER" -p"$DB_PASSWORD" "$DB_NAME" < "$DUMP_FILE"
 
 echo "[3/4] Замена URL: $PROD_URL → $LOCAL_URL"
 docker compose exec -T wordpress wp search-replace "$PROD_URL" "$LOCAL_URL" \
