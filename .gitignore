@@ -11,3 +11,4 @@ wp-content/upgrade/
 # Системное
 .DS_Store
 Thumbs.db
+backups/
