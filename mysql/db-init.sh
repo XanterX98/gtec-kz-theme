@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e
 
-mysql -h 127.0.0.1 -uroot -p"${MYSQL_ROOT_PASSWORD}" -e "
+mysql -h db -uroot -p"${MYSQL_ROOT_PASSWORD}" -e "
   CREATE DATABASE IF NOT EXISTS \`${MYSQL_DATABASE}\` CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
   CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'%' IDENTIFIED BY '${MYSQL_PASSWORD}';
   CREATE USER IF NOT EXISTS '${MYSQL_USER}'@'localhost' IDENTIFIED BY '${MYSQL_PASSWORD}';
